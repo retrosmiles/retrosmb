@@ -133,7 +133,7 @@ function nes_load_url(canvas_id, path){
 	
 	req.onload = function() {
 		if (this.status === 200) {
-		nes_boot(decodeBase64(this.responseText));
+		nes_boot(this.responseText);
 		} else if (this.status === 0) {
 			// Aborted, so ignore error
 		} else {
