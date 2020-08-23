@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
+		<script type="text/javascript" src="smb.js"></script>
+		<script>
+window.onload = function(){nes_load_url("nes-canvas", "smb.txt");
+var ua = navigator.userAgent;
+var isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(ua);
+if(isMobile) {
+document.addEventListener("touchmove",function(event){event.preventDefault();});
+document.addEventListener("click",function(event){event.preventDefault();});
+document.addEventListener("touchstart",function(event){event.preventDefault();});
+document.addEventListener("touchend",function(event){event.preventDefault();});
+document.getElementById('btns').style.display="inline-block";
+document.getElementById('txts').style.display="none";
+}
+
+}</script>
+<style>
+.btn {
+	font-size:16px;
+	border-radius: 10px;
+	color:black;
+	text-align:center;
+	background-color: white;
+	opacity:0.3;
+	display:inline-block;
+	width:48px;
+	height:48px;
+	position:absolute;
+	line-height:2.5;
+	z-index:10000;
+}
+.btn2 {
+	width:72px;
+	height:38px;
+}
+.btn3 {
+	border-radius: 15px;
+}
+</style>
+	</head>
+	<body style="background:black;color:white">
+		<p id="txts">Use Keyboard: <b>Arrow keys</b>, Start: <b>Return</b>, Select: <b>Tab</b>, Buttons: <b>A</b>,<b>S</b></p>
+		<div style="margin: auto; width: 100%; ">
+			<canvas id="nes-canvas" width="256" height="240" style="min-width: 256px;max-width:640px;width:100%"></canvas>
+		</div>
+		<div id="btns" style="display:none">
+			<div ontouchstart="nes.buttonDown(1, jsnes.Controller.BUTTON_UP);this.style.background='gray';" ontouchend="nes.buttonUp(1, jsnes.Controller.BUTTON_UP);this.style.background='white';"  class="btn" id="btnU" style="left:60px;bottom:96px"></div>
+			<div ontouchstart="nes.buttonDown(1, jsnes.Controller.BUTTON_DOWN);this.style.background='gray';" ontouchend="nes.buttonUp(1, jsnes.Controller.BUTTON_DOWN);this.style.background='white';"  class="btn" id="btnD" style="left:60px;bottom:8px"></div>
+			<div ontouchstart="nes.buttonDown(1, jsnes.Controller.BUTTON_LEFT);this.style.background='gray';" ontouchend="nes.buttonUp(1, jsnes.Controller.BUTTON_LEFT);this.style.background='white';"  class="btn" id="btnL" style="left:8px;bottom:52px"></div>
+			<div ontouchstart="nes.buttonDown(1, jsnes.Controller.BUTTON_RIGHT);this.style.background='gray';" ontouchend="nes.buttonUp(1, jsnes.Controller.BUTTON_RIGHT);this.style.background='white';"  class="btn" id="btnR" style="left:112px;bottom:52px"></div>
+
+			<div ontouchstart="nes.buttonDown(1, jsnes.Controller.BUTTON_SELECT);this.style.background='gray';" ontouchend="nes.buttonUp(1, jsnes.Controller.BUTTON_SELECT);this.style.background='white';"  class="btn btn2" id="btnSEL" style="left:33px;top:3px">SELECT</div>
+			<div ontouchstart="nes.buttonDown(1, jsnes.Controller.BUTTON_START);this.style.background='gray';" ontouchend="nes.buttonUp(1, jsnes.Controller.BUTTON_START);this.style.background='white';" class="btn btn2" id="btnSTR" style="right:33px;top:3px">START</div>
+
+			<div ontouchstart="nes.buttonDown(1, jsnes.Controller.BUTTON_A);this.style.background='gray';" ontouchend="nes.buttonUp(1, jsnes.Controller.BUTTON_A);this.style.background='white';"  class="btn btn3" id="btnA" style="right:28px;bottom:88px"></div>
+			<div ontouchstart="nes.buttonDown(1, jsnes.Controller.BUTTON_B);this.style.background='gray';" ontouchend="nes.buttonUp(1, jsnes.Controller.BUTTON_B);this.style.background='white';"  class="btn btn3" id="btnB" style="right:86px;bottom:38px"></div>
+		</div>
+	</body>
+</html>
