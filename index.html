@@ -17,6 +17,7 @@ document.addEventListener("touchmove",function(event){event.preventDefault();});
 document.addEventListener("click",function(event){event.preventDefault();});
 document.addEventListener("touchstart",function(event){event.preventDefault();});
 document.addEventListener("touchend",function(event){event.preventDefault();});
+document.getElementById('game').style.display="inline-block";
 document.getElementById('btns').style.display="inline-block";
 document.getElementById('txts').style.display="none";
 }
@@ -47,8 +48,8 @@ document.getElementById('txts').style.display="none";
 </style>
 	</head>
 	<body style="background:black;color:white">
-		<p id="txts"><img src="h.jpg"/></p>
-		<div style="margin: auto; width: 100%; ">
+		<p id="txts">Use these keys:<br><br><img src="h.jpg"/><br><br><button style="font-size:1.5em;cursor:pointer" onclick="document.getElementById('txts').style.display='none';document.getElementById('game').style.display='inline-block';">OK, Start!</button></p>
+		<div id="game" style="display:none; margin: auto; width: 100%; ">
 			<canvas id="nes-canvas" width="256" height="240" style="min-width: 256px;max-width:640px;width:100%"></canvas>
 		</div>
 		<div id="btns" style="display:none">
