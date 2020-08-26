@@ -8,8 +8,8 @@
 		<script type="text/javascript" src="smb.js"></script>
 		<script>
 window.onload = function(){
-//nes_load_url("nes-canvas", "smb.txt");
 nes_auto("nes-canvas");
+
 var ua = navigator.userAgent;
 var isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(ua);
 if(isMobile) {
@@ -47,7 +47,7 @@ document.getElementById('txts').style.display="none";
 </style>
 	</head>
 	<body style="background:black;color:white">
-		<p id="txts">Use Keyboard: <b>Arrow keys</b>, <b>Enter</b> = Start, <b>Space</b> = Select, Buttons: <b>A</b> and <b>S</b></p>
+		<p id="txts"><img src="h.jpg"/></p>
 		<div style="margin: auto; width: 100%; ">
 			<canvas id="nes-canvas" width="256" height="240" style="min-width: 256px;max-width:640px;width:100%"></canvas>
 		</div>
